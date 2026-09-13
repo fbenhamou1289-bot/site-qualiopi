@@ -3,93 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agence Premium - Sécurité au Travail</title>
+    <title>Académie Premium - Formations B2B</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Utilisation de la police Inter pour le côté EdTech Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icônes Phosphor (très corporate et modernes) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Image de fond moderne (Espace de travail lumineux et abstrait) avec overlay Deep Navy */
+        .hero-section {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
         }
-        .card-sst {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-        }
-        .card-incendie {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1601594954707-1b33bf67b848?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
-        }
-        .bg-cover-card { background-size: cover; background-position: center; transition: transform 0.5s ease; }
-        .card-container:hover .bg-cover-card { transform: scale(1.05); }
-        .modal { transition: opacity 0.3s ease; }
+
+        /* Animations fluides pour les modales */
+        .modal-overlay { transition: opacity 0.3s ease; }
+        .modal-content { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease; }
+        
+        /* États cachés des modales */
+        .modal-hidden .modal-overlay { opacity: 0; pointer-events: none; }
+        .modal-hidden .modal-content { transform: scale(0.95) translateY(20px); opacity: 0; pointer-events: none; }
     </style>
 </head>
-<body class="text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur shadow-sm fixed w-full z-40 top-0 transition-all">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 top-0 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-2xl font-bold text-slate-900 tracking-tight">
-                <span class="text-blue-600">PREMIUM</span> SÉCURITÉ
+            <div class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                <i class="ph ph-cube-transparent text-blue-600 text-3xl"></i>
+                <span>PRÉVENTIS<span class="font-light text-slate-500"> ACADEMY</span></span>
             </div>
-            <div class="hidden md:flex space-x-8 items-center font-medium text-sm text-slate-600">
-                <a href="#" class="hover:text-blue-600 transition">Accueil</a>
-                <a href="#formations" class="hover:text-blue-600 transition">Nos Formations</a>
-                <a href="#contact" class="px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-blue-600 transition">Nous contacter</a>
+            <!-- Bouton caché sur mobile pour garder l'interface propre -->
+            <div class="hidden md:block">
+                <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition mr-6">Nous contacter</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-bg h-[70vh] flex items-center justify-center text-center mt-20 px-6">
-        <div class="max-w-4xl">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-widest uppercase mb-6">
-                Organisme Certifié Qualiopi
-            </span>
-            <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6 tracking-tight">
-                Protégez vos équipes.<br> <span class="text-blue-400 font-light">Maîtrisez vos risques.</span>
-            </h1>
-            <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto">
-                Des formations réglementaires haut de gamme dispensées par des professionnels du terrain (pompiers, préventeurs) directement dans vos locaux.
-            </p>
+    <header class="hero-section min-h-[80vh] flex items-center mt-12 px-6">
+        <div class="max-w-7xl mx-auto w-full pt-16">
+            <div class="max-w-3xl">
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="ph-fill ph-check-circle"></i> Certifié Qualiopi
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="ph-fill ph-bank"></i> Éligible OPCO / FNE
+                    </span>
+                </div>
+                
+                <!-- Headline -->
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                    Développez les compétences de vos équipes. <span class="text-slate-400">Assurez votre conformité.</span>
+                </h1>
+                
+                <!-- Subheadline -->
+                <p class="text-lg text-slate-300 font-light max-w-2xl mb-10 leading-relaxed">
+                    Des parcours de formation sur-mesure, des obligations réglementaires jusqu'aux compétences de demain (Management, IA, Soft Skills).
+                </p>
+                
+                <!-- Unique Primary CTA -->
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-medium py-4 px-8 rounded-lg transition-colors duration-200 text-lg shadow-lg shadow-blue-900/20">
+                    Parler à un conseiller <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Formations Section -->
-    <section id="formations" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Nos Formations d'Excellence</h2>
-            <p class="text-slate-500">Des programmes certifiants adaptés à votre secteur d'activité.</p>
+    <!-- Catalogue Section -->
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="catalogue">
+        
+        <!-- Section Title & Filters -->
+        <div class="mb-16">
+            <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Notre Catalogue</h2>
+            <h3 class="text-3xl font-bold text-slate-900 mb-8">Les compétences qui font avancer votre organisation.</h3>
+            
+            <!-- Category Pills -->
+            <div class="flex flex-wrap gap-4 border-b border-slate-200 pb-6">
+                <button class="bg-slate-900 text-white px-5 py-2.5 rounded-md text-sm font-medium flex items-center gap-2">
+                    <i class="ph ph-shield-check text-lg"></i> Sécurité & Réglementaire
+                </button>
+                <button class="bg-white text-slate-500 border border-slate-200 hover:bg-slate-50 px-5 py-2.5 rounded-md text-sm font-medium flex items-center gap-2 transition cursor-not-allowed opacity-70" title="En cours d'ingénierie">
+                    <i class="ph ph-users-three text-lg"></i> Management <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded ml-1">À venir</span>
+                </button>
+                <button class="bg-white text-slate-500 border border-slate-200 hover:bg-slate-50 px-5 py-2.5 rounded-md text-sm font-medium flex items-center gap-2 transition cursor-not-allowed opacity-70" title="En cours d'ingénierie">
+                    <i class="ph ph-cpu text-lg"></i> Digital & IA <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded ml-1">À venir</span>
+                </button>
+            </div>
         </div>
 
+        <!-- Course Grid -->
         <div class="grid md:grid-cols-2 gap-8">
             
-            <!-- Carte SST -->
-            <div class="card-container rounded-2xl overflow-hidden shadow-xl relative h-96 group cursor-pointer" onclick="openModal('modal-sst')">
-                <div class="absolute inset-0 bg-cover-card card-sst"></div>
-                <div class="absolute inset-0 flex flex-col justify-end p-8">
-                    <span class="text-blue-400 font-bold text-sm tracking-wider uppercase mb-2">Formation Certifiante</span>
-                    <h3 class="text-3xl font-bold text-white mb-2">Sauveteur Secouriste (SST)</h3>
-                    <p class="text-slate-300 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                        Formez des acteurs de la prévention capables d'intervenir en cas d'accident.
-                    </p>
-                    <button class="bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 px-6 rounded-lg w-max transition">
-                        Voir le programme détaillé
+            <!-- Card 1 : SST -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="bg-slate-900 text-white p-3 rounded-lg">
+                        <i class="ph ph-heartbeat text-3xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Prévention & Secours</span>
+                </div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-3">Sauveteur Secouriste du Travail (SST)</h4>
+                <p class="text-slate-600 mb-8 flex-grow font-light">Prévenir les risques, protéger et intervenir efficacement face à un accident du travail au sein de vos locaux.</p>
+                
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div class="flex gap-4 text-sm text-slate-500">
+                        <span class="flex items-center gap-1.5"><i class="ph ph-clock text-lg"></i> 14 heures</span>
+                        <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-lg"></i> Intra / Inter</span>
+                    </div>
+                    <!-- Bouton qui ouvre la modale Qualiopi -->
+                    <button onclick="openModal('modal-sst')" class="text-blue-600 font-medium text-sm flex items-center gap-1.5 hover:text-blue-800 transition group-hover:translate-x-1">
+                        Voir le programme <i class="ph ph-arrow-right"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Carte Incendie -->
-            <div class="card-container rounded-2xl overflow-hidden shadow-xl relative h-96 group cursor-pointer" onclick="openModal('modal-incendie')">
-                <div class="absolute inset-0 bg-cover-card card-incendie"></div>
-                <div class="absolute inset-0 flex flex-col justify-end p-8">
-                    <span class="text-red-400 font-bold text-sm tracking-wider uppercase mb-2">Sécurité Incendie</span>
-                    <h3 class="text-3xl font-bold text-white mb-2">Manipulation Extincteurs</h3>
-                    <p class="text-slate-300 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
-                        Apprenez à maîtriser un départ de feu et à évacuer vos locaux en sécurité.
-                    </p>
-                    <button class="bg-red-600 hover:bg-red-500 text-white font-medium py-3 px-6 rounded-lg w-max transition">
-                        Voir le programme détaillé
+            <!-- Card 2 : Incendie -->
+            <div class="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="bg-slate-900 text-white p-3 rounded-lg">
+                        <i class="ph ph-fire text-3xl"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Préparation & Réaction</span>
+                </div>
+                <h4 class="text-2xl font-bold text-slate-900 mb-3">Incendie & Évacuation</h4>
+                <p class="text-slate-600 mb-8 flex-grow font-light">Détecter un départ de feu, utiliser les moyens de première intervention et organiser l'évacuation de votre site.</p>
+                
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div class="flex gap-4 text-sm text-slate-500">
+                        <span class="flex items-center gap-1.5"><i class="ph ph-clock text-lg"></i> 3,5 heures</span>
+                        <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-lg"></i> Sur site</span>
+                    </div>
+                    <!-- Bouton qui ouvre la modale Qualiopi -->
+                    <button onclick="openModal('modal-incendie')" class="text-blue-600 font-medium text-sm flex items-center gap-1.5 hover:text-blue-800 transition group-hover:translate-x-1">
+                        Voir le programme <i class="ph ph-arrow-right"></i>
                     </button>
                 </div>
             </div>
@@ -97,67 +151,127 @@
         </div>
     </section>
 
-    <!-- Modals (Les 9 points Qualiopi cachés) -->
-    
-    <!-- Modal SST -->
-    <div id="modal-sst" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
-        <div class="absolute w-full h-full bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-sst')"></div>
-        <div class="bg-white w-11/12 md:max-w-2xl mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto max-h-[90vh]">
-            <div class="py-6 px-8 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
-                <h3 class="text-xl font-bold text-slate-900">Programme SST (Conformité Qualiopi)</h3>
-                <button onclick="closeModal('modal-sst')" class="text-slate-400 hover:text-slate-800 text-2xl font-bold">&times;</button>
+    <!-- Handicap Section -->
+    <section class="bg-slate-100 py-16 px-6 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div class="bg-slate-900 text-white p-6 rounded-2xl flex-shrink-0">
+                <i class="ph ph-wheelchair text-5xl"></i>
             </div>
-            <div class="p-8">
-                <ul class="space-y-4 text-sm text-slate-600">
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">1. Prérequis :</strong> Aucun prérequis nécessaire.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">2. Objectifs :</strong> Secourir une victime d'AT et participer à la prévention des risques (grille INRS).</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">3. Durée :</strong> 14 heures réparties sur 2 jours (présentiel).</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">4. Méthodes :</strong> Apports théoriques, mises en situation sur mannequins, utilisation DAE.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">5. Évaluation :</strong> Évaluation formative continue et épreuve certificative finale.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">6. Accès & Délais :</strong> Inscription jusqu'à 48h avant. Début de session sous 14 jours.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">7. Tarifs :</strong> 250 € HT/personne ou sur devis Intra-entreprise.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">8. Contacts :</strong> inscription@agence-premium.fr | 01 00 00 00 00</li>
-                    <li class="p-3 bg-blue-50 border border-blue-100 rounded-lg"><strong class="text-blue-800 block mb-1">9. Accessibilité PSH :</strong> Accessible aux personnes en situation de handicap. Contactez notre Référent Handicap au 01 00 00 00 00 pour toute adaptation.</li>
+            <div>
+                <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Inclusion & Accompagnement</h3>
+                <h4 class="text-2xl font-bold text-slate-900 mb-3">Notre Engagement Accessibilité PSH</h4>
+                <p class="text-slate-600 mb-4 max-w-3xl">
+                    Chaque personne doit pouvoir développer ses compétences dans les meilleures conditions. Notre référent handicap étudie avec vous les adaptations pédagogiques, matérielles et organisationnelles nécessaires avant l'entrée en formation.
+                </p>
+                <!-- Contacts en GRAS et très visibles comme demandé -->
+                <div class="bg-white inline-block px-4 py-2 border border-slate-200 rounded-md">
+                    <p class="text-slate-900 text-sm">
+                        Contactez notre référent : <strong class="text-blue-600 font-bold">handicap@preventis-academy.fr</strong> | <strong class="text-blue-600 font-bold">01 00 00 00 00</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 px-6 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto border-b border-slate-800 pb-8 mb-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                <i class="ph ph-cube-transparent text-blue-500"></i> PRÉVENTIS
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <span>SIRET : XX XXX XXX XXXXX</span>
+                <span>NDA : XX XX XXXXX XX (Préfet de région)</span>
+                <a href="#" class="hover:text-white transition">Mentions légales</a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-slate-600">
+            &copy; 2026 Préventis Academy. Conforme au Référentiel National Qualité (Qualiopi).
+        </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- MODALES (LES 9 POINTS QUALIOPI CACHÉS) -->
+    <!-- ========================================== -->
+
+    <!-- Modal SST -->
+    <div id="modal-sst" class="modal-hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Overlay sombre -->
+        <div class="modal-overlay absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-sst')"></div>
+        
+        <!-- Contenu de la modale -->
+        <div class="modal-content relative bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Programme détaillé : SST</h3>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">Conformité Indicateur 1 (Qualiopi)</p>
+                </div>
+                <button onclick="closeModal('modal-sst')" class="text-slate-400 hover:text-slate-900 text-2xl transition">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto">
+                <ul class="space-y-5 text-sm text-slate-600">
+                    <li><strong class="text-slate-900 block mb-1">1. Prérequis</strong> Aucun prérequis nécessaire.</li>
+                    <li><strong class="text-slate-900 block mb-1">2. Objectifs</strong> Intervenir face à une situation d'accident et contribuer à la prévention des risques professionnels (selon référentiel INRS).</li>
+                    <li><strong class="text-slate-900 block mb-1">3. Durée</strong> 14 heures réparties sur 2 jours consécutifs (en présentiel).</li>
+                    <li><strong class="text-slate-900 block mb-1">4. Méthodes mobilisées</strong> Apports théoriques, apprentissage des gestes, mises en situation avec cas concrets (mannequins, défibrillateur).</li>
+                    <li><strong class="text-slate-900 block mb-1">5. Modalités d'évaluation</strong> Évaluation formative continue et épreuves certificatives finales selon la grille INRS.</li>
+                    <li><strong class="text-slate-900 block mb-1">6. Modalités et délais d'accès</strong> Inscription jusqu'à 48 heures avant le début de la session. Démarrage sous 14 jours après signature du devis.</li>
+                    <li><strong class="text-slate-900 block mb-1">7. Tarifs</strong> Inter : 250 € HT par personne. Intra : Sur devis forfaitaire.</li>
+                    <li><strong class="text-slate-900 block mb-1">8. Contacts</strong> inscription@preventis-academy.fr | 01 00 00 00 00</li>
+                    <li class="bg-blue-50/50 p-4 rounded-lg border border-blue-100"><strong class="text-blue-800 block mb-1">9. Accessibilité PSH</strong> Formation accessible aux personnes en situation de handicap. Contactez notre Référent Handicap au 01 00 00 00 00 pour l'étude des adaptations nécessaires.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- Modal Incendie -->
-    <div id="modal-incendie" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
-        <div class="absolute w-full h-full bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-incendie')"></div>
-        <div class="bg-white w-11/12 md:max-w-2xl mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto max-h-[90vh]">
-            <div class="py-6 px-8 border-b border-slate-100 flex justify-between items-center bg-slate-50 rounded-t-2xl">
-                <h3 class="text-xl font-bold text-slate-900">Programme Incendie (Conformité Qualiopi)</h3>
-                <button onclick="closeModal('modal-incendie')" class="text-slate-400 hover:text-slate-800 text-2xl font-bold">&times;</button>
+    <div id="modal-incendie" class="modal-hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Overlay sombre -->
+        <div class="modal-overlay absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal('modal-incendie')"></div>
+        
+        <!-- Contenu de la modale -->
+        <div class="modal-content relative bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Programme détaillé : Incendie</h3>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">Conformité Indicateur 1 (Qualiopi)</p>
+                </div>
+                <button onclick="closeModal('modal-incendie')" class="text-slate-400 hover:text-slate-900 text-2xl transition">
+                    <i class="ph ph-x"></i>
+                </button>
             </div>
-            <div class="p-8">
-                <ul class="space-y-4 text-sm text-slate-600">
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">1. Prérequis :</strong> Aucun prérequis nécessaire.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">2. Objectifs :</strong> Maîtriser un départ de feu, alerter et évacuer en sécurité.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">3. Durée :</strong> 3h30 (une demi-journée en présentiel).</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">4. Méthodes :</strong> Visite du site, apports théoriques, manipulation sur bac à feu écologique.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">5. Évaluation :</strong> Contrôle continu pratique lors des exercices d'extinction.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">6. Accès & Délais :</strong> Inscription jusqu'à 48h avant. Intervention sous 10 jours.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">7. Tarifs :</strong> Forfait Intra à partir de 450 € HT par groupe.</li>
-                    <li class="p-3 bg-slate-50 rounded-lg"><strong class="text-slate-900 block mb-1">8. Contacts :</strong> inscription@agence-premium.fr | 01 00 00 00 00</li>
-                    <li class="p-3 bg-blue-50 border border-blue-100 rounded-lg"><strong class="text-blue-800 block mb-1">9. Accessibilité PSH :</strong> Accessible aux personnes en situation de handicap. Contactez notre Référent Handicap au 01 00 00 00 00 pour toute adaptation.</li>
+            <div class="p-8 overflow-y-auto">
+                <ul class="space-y-5 text-sm text-slate-600">
+                    <li><strong class="text-slate-900 block mb-1">1. Prérequis</strong> Aucun prérequis nécessaire.</li>
+                    <li><strong class="text-slate-900 block mb-1">2. Objectifs</strong> Manipuler les extincteurs face à un départ de feu, alerter et diriger l'évacuation des locaux.</li>
+                    <li><strong class="text-slate-900 block mb-1">3. Durée</strong> 3,5 heures (une demi-journée en présentiel sur votre site).</li>
+                    <li><strong class="text-slate-900 block mb-1">4. Méthodes mobilisées</strong> Apports théoriques, repérage sur site, manipulation pratique sur bac à feu écologique.</li>
+                    <li><strong class="text-slate-900 block mb-1">5. Modalités d'évaluation</strong> Contrôle continu lors des exercices d'extinction.</li>
+                    <li><strong class="text-slate-900 block mb-1">6. Modalités et délais d'accès</strong> Inscription jusqu'à 48 heures avant. Intervention sous 10 jours ouvrés.</li>
+                    <li><strong class="text-slate-900 block mb-1">7. Tarifs</strong> Forfait Intra-entreprise : À partir de 450 € HT par groupe.</li>
+                    <li><strong class="text-slate-900 block mb-1">8. Contacts</strong> inscription@preventis-academy.fr | 01 00 00 00 00</li>
+                    <li class="bg-blue-50/50 p-4 rounded-lg border border-blue-100"><strong class="text-blue-800 block mb-1">9. Accessibilité PSH</strong> Formation accessible aux personnes en situation de handicap. Contactez notre Référent Handicap au 01 00 00 00 00 pour l'étude des adaptations nécessaires.</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Script pour Modals -->
+    <!-- Scripts pour la gestion des Modales -->
     <script>
         function openModal(id) {
-            document.getElementById(id).classList.remove('opacity-0', 'pointer-events-none');
-            document.body.style.overflow = 'hidden'; // Bloque le scroll
+            const modal = document.getElementById(id);
+            modal.classList.remove('modal-hidden');
+            document.body.style.overflow = 'hidden'; // Empêche de scroller la page derrière
         }
+
         function closeModal(id) {
-            document.getElementById(id).classList.add('opacity-0', 'pointer-events-none');
+            const modal = document.getElementById(id);
+            modal.classList.add('modal-hidden');
             document.body.style.overflow = 'auto'; // Réactive le scroll
         }
     </script>
-
 </body>
 </html>
