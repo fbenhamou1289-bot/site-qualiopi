@@ -3,56 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votre Agence de Formation - Sécurité et Prévention</title>
+    <title>Centre de Formation Sécurité & Prévention | Conformité Qualiopi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #2d3748; margin: 0; padding: 0; background-color: #f7fafc; }
-        header { background-color: #1a365d; color: #ffffff; padding: 30px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { margin: 10px 0 0 0; font-size: 1.2em; font-style: italic; opacity: 0.9; }
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .card { background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        h2 { color: #2b6cb0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 0; }
-        ul { list-style-type: none; padding: 0; }
-        ul li { background: #edf2f7; margin-bottom: 10px; padding: 12px 15px; border-radius: 4px; border-left: 4px solid #3182ce; }
-        .highlight { background-color: #ebf8ff; padding: 15px; border: 1px solid #90cdf4; border-radius: 4px; margin-top: 20px; }
-        .highlight strong { color: #2b6cb0; }
-        footer { background-color: #2d3748; color: #ffffff; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em; }
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg-light: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .badge-qualiopi {
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.2);
+            border: 1px solid var(--accent);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+        header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+
+        .container { max-width: 1100px; margin: -40px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin: 40px 0 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
+
+        .card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        .card-header {
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-title { font-size: 1.4rem; color: var(--accent); font-weight: 700; }
+        .card-subtitle { font-size: 0.9rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 5px; }
+
+        .info-list { list-style: none; }
+        .info-item { margin-bottom: 14px; font-size: 0.95rem; }
+        .info-item strong { color: var(--text-dark); display: block; font-size: 0.85rem; text-transform: uppercase; color: #64748b; }
+
+        .psh-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .psh-box h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.2rem; }
+
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+        }
+
+        footer strong { color: #ffffff; }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+        .btn-contact:hover { background-color: var(--accent-hover); }
     </style>
 </head>
 <body>
 
     <header>
+        <span class="badge-qualiopi">Organisme de Formation Sécurité</span>
         <h1>[Nom de Votre Agence]</h1>
-        <p>L'expertise en formations Santé, Sécurité et Conditions de Travail</p>
+        <p>Excellence et conformité réglementaire pour la formation en Santé, Sécurité et Prévention des Risques Professionnels.</p>
     </header>
 
     <div class="container">
-        
-        <div class="card">
-            <h2>Notre Formation Phare : Sauveteur Secouriste du Travail (SST)</h2>
-            <p>Découvrez les informations essentielles de notre programme certifiant, conformément à nos engagements qualité :</p>
-            
-            <ul>
-                <li><strong>1. Prérequis :</strong> Aucun prérequis n'est exigé pour suivre cette formation initiale.</li>
-                <li><strong>2. Objectifs :</strong> Intervenir face à une situation d'accident du travail et contribuer à la prévention des risques professionnels dans l'entreprise.</li>
-                <li><strong>3. Durée :</strong> 14 heures réparties sur 2 jours consécutifs (en présentiel).</li>
-                <li><strong>4. Méthodes mobilisées :</strong> Apports théoriques, démonstrations, apprentissage des gestes et mises en situation avec cas concrets (mannequins, défibrillateur).</li>
-                <li><strong>5. Modalités d'évaluation :</strong> Évaluation formative continue et épreuves certificatives finales selon la grille INRS.</li>
-                <li><strong>6. Modalités et délais d'accès :</strong> Inscription possible jusqu'à 48 heures avant le début de la session (sous réserve de places disponibles).</li>
-                <li><strong>7. Tarifs :</strong> À partir de 250 € HT par personne (Inter) ou sur devis forfaitaire pour les sessions Intra-entreprise.</li>
-                <li><strong>8. Contacts :</strong> Pour toute demande de devis ou d'inscription, contactez [Votre Prénom et Nom] à [Votre Email] ou au [Votre Numéro].</li>
-            </ul>
 
-            <div class="highlight">
-                <strong>9. Accessibilité PSH (Personnes en Situation de Handicap) :</strong><br>
-                Nos formations sont accessibles aux personnes en situation de handicap. Pour toute adaptation matérielle ou pédagogique de votre parcours, merci de contacter notre Référent Handicap, [Nom du Référent], au [Numéro] avant votre inscription.
+        <h2 class="section-title">Nos Programmes de Formation (Indicateur 1)</h2>
+        
+        <div class="grid">
+            
+            <!-- Formation 1 : SST -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Sauveteur Secouriste du Travail (SST)</div>
+                    <div class="card-subtitle">Formation Initiale Certifiante</div>
+                </div>
+                <ul class="info-list">
+                    <li class="info-item"><strong>1. Prérequis</strong> Aucun prérequis nécessaire.</li>
+                    <li class="info-item"><strong>2. Objectifs</strong> Secourir toute victime d’un accident du travail et participer à la prévention des risques professionnels dans l'entreprise.</li>
+                    <li class="info-item"><strong>3. Durée</strong> 14 heures (2 jours en présentiel).</li>
+                    <li class="info-item"><strong>4. Méthodes Mobilisées</strong> Cas pratiques, apports théoriques, simulations d'incidents sur mannequins certifiés et défibrillateur de démonstration.</li>
+                    <li class="info-item"><strong>5. Modalités d'Évaluation</strong> Évaluation continue formative tout au long du stage et épreuves certificatives selon la grille nationale INRS.</li>
+                    <li class="info-item"><strong>6. Délais & Accessibilité</strong> Session sous 14 jours à compter du devis signé. Inscription jusqu'à 48h avant le début du stage.</li>
+                    <li class="info-item"><strong>7. Tarifs</strong> Inter : 250 € HT / stagiaire. Intra : Devis sur-mesure sur demande.</li>
+                    <li class="info-item"><strong>8. Contact & Inscription</strong> email@votre-agence.fr | 01 00 00 00 00</li>
+                </ul>
             </div>
+
+            <!-- Formation 2 : Incendie / Evacuation -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Manipulations Extincteurs & Évacuation</div>
+                    <div class="card-subtitle">Sécurité Incendie en Entreprise</div>
+                </div>
+                <ul class="info-list">
+                    <li class="info-item"><strong>1. Prérequis</strong> Aucun prérequis nécessaire.</li>
+                    <li class="info-item"><strong>2. Objectifs</strong> Manipuler les extincteurs face à un départ de feu, connaître les procédures d'alarme et diriger l'évacuation des locaux.</li>
+                    <li class="info-item"><strong>3. Durée</strong> 3h30 (0,5 jour en présentiel).</li>
+                    <li class="info-item"><strong>4. Méthodes Mobilisées</strong> Extinction de vrais feux sur bac à feu écologique autonome, mise en situation dans l'entreprise client.</li>
+                    <li class="info-item"><strong>5. Modalités d'Évaluation</strong> Contrôle pratique continu de manipulation du matériel en fin de session.</li>
+                    <li class="info-item"><strong>6. Délais & Accessibilité</strong> Intervention sous 10 jours ouvrés après validation de la convention.</li>
+                    <li class="info-item"><strong>7. Tarifs</strong> Forfait Intra-entreprise : À partir de 450 € HT par groupe (max 12 pers).</li>
+                    <li class="info-item"><strong>8. Contact & Inscription</strong> email@votre-agence.fr | 01 00 00 00 00</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Box Accessibilité Handicap (Exigence Qualiopi Ind. 1 & 26) -->
+        <div class="psh-box">
+            <h3>9. Accueil & Accessibilité aux Personnes en Situation de Handicap (PSH)</h3>
+            <p>Nos formations sont étudiées pour être accessibles à tous. Tout aménagement pédagogique, technique ou organisationnel peut être mis en œuvre après étude préalable de vos besoins spécifiques.</p>
+            <p style="margin-top: 10px;"><strong>Contact Référent Handicap :</strong> M./Mme [Nom du Référent] - <strong>Email :</strong> handicap@votre-agence.fr</p>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 [Nom de Votre Agence] - Numéro de Déclaration d'Activité : [Votre NDA] - SIRET : [Votre SIRET]</p>
+        <p><strong>[Nom de Votre Agence]</strong> — Organisme de Formation Professionnelle</p>
+        <p>SIRET : 000 000 000 00000 | Déclaration d'activité enregistrée sous le N° 00 00 00000 00 auprès du Préfet de région.</p>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #64748b;">Conforme au Référentiel National Qualité (Qualiopi) | Informations publiques mises à jour en 2026.</p>
     </footer>
 
 </body>
