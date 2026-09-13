@@ -3,186 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre de Formation Sécurité & Prévention | Conformité Qualiopi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Agence Sécurité & Prévention | Formations Qualiopi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --bg-light: #f8fafc;
-            --surface: #ffffff;
-            --text-main: #334155;
-            --text-dark: #0f172a;
-            --border: #e2e8f0;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, .font-title { font-family: 'Montserrat', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1582142407894-ec85a1260a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
-
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .badge-qualiopi {
-            display: inline-block;
-            background-color: rgba(37, 99, 235, 0.2);
-            border: 1px solid var(--accent);
-            color: #60a5fa;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-        header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
-
-        .container { max-width: 1100px; margin: -40px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin: 40px 0 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
-
-        .card {
-            background: var(--surface);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-
-        .card-header {
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .card-title { font-size: 1.4rem; color: var(--accent); font-weight: 700; }
-        .card-subtitle { font-size: 0.9rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 5px; }
-
-        .info-list { list-style: none; }
-        .info-item { margin-bottom: 14px; font-size: 0.95rem; }
-        .info-item strong { color: var(--text-dark); display: block; font-size: 0.85rem; text-transform: uppercase; color: #64748b; }
-
-        .psh-box {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--accent);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 40px;
-        }
-
-        .psh-box h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.2rem; }
-
-        footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid #334155;
-        }
-
-        footer strong { color: #ffffff; }
-
-        .btn-contact {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background 0.2s;
-        }
-        .btn-contact:hover { background-color: var(--accent-hover); }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <header>
-        <span class="badge-qualiopi">Organisme de Formation Sécurité</span>
-        <h1>[Nom de Votre Agence]</h1>
-        <p>Excellence et conformité réglementaire pour la formation en Santé, Sécurité et Prévention des Risques Professionnels.</p>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50">
+        <div class="text-2xl font-extrabold text-blue-900 tracking-tight">
+            <i class="fa-solid fa-shield-halved text-blue-600 mr-2"></i>[NOM AGENCE]
+        </div>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-semibold text-gray-600">
+            <span class="flex items-center"><i class="fa-solid fa-phone text-blue-600 mr-2"></i> 01 00 00 00 00</span>
+            <span class="flex items-center"><i class="fa-solid fa-envelope text-blue-600 mr-2"></i> contact@agence.fr</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg py-24 px-6 text-center border-b-4 border-blue-600">
+        <div class="inline-block bg-blue-900/50 border border-blue-400 text-blue-200 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
+            <i class="fa-solid fa-check-circle mr-1"></i> Organisme Certifié Qualiopi
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl mx-auto">
+            L'Expertise en Formations <span class="text-blue-400">Santé & Sécurité</span> au Travail
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light">
+            Des programmes réglementaires dispensés par des experts terrains pour garantir la sécurité de vos collaborateurs.
+        </p>
     </header>
 
-    <div class="container">
-
-        <h2 class="section-title">Nos Programmes de Formation (Indicateur 1)</h2>
-        
-        <div class="grid">
+    <!-- Formations Section (Indicateur 1) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <!-- Formation 1 : SST -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Sauveteur Secouriste du Travail (SST)</div>
-                    <div class="card-subtitle">Formation Initiale Certifiante</div>
+            <!-- Card SST -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                <div class="bg-blue-50 border-b border-blue-100 p-6 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-blue-900">Sauveteur Secouriste du Travail (SST)</h2>
+                        <p class="text-sm font-semibold text-blue-600 uppercase tracking-wider mt-1">Formation Initiale Certifiante</p>
+                    </div>
+                    <i class="fa-solid fa-heart-pulse text-4xl text-blue-200"></i>
                 </div>
-                <ul class="info-list">
-                    <li class="info-item"><strong>1. Prérequis</strong> Aucun prérequis nécessaire.</li>
-                    <li class="info-item"><strong>2. Objectifs</strong> Secourir toute victime d’un accident du travail et participer à la prévention des risques professionnels dans l'entreprise.</li>
-                    <li class="info-item"><strong>3. Durée</strong> 14 heures (2 jours en présentiel).</li>
-                    <li class="info-item"><strong>4. Méthodes Mobilisées</strong> Cas pratiques, apports théoriques, simulations d'incidents sur mannequins certifiés et défibrillateur de démonstration.</li>
-                    <li class="info-item"><strong>5. Modalités d'Évaluation</strong> Évaluation continue formative tout au long du stage et épreuves certificatives selon la grille nationale INRS.</li>
-                    <li class="info-item"><strong>6. Délais & Accessibilité</strong> Session sous 14 jours à compter du devis signé. Inscription jusqu'à 48h avant le début du stage.</li>
-                    <li class="info-item"><strong>7. Tarifs</strong> Inter : 250 € HT / stagiaire. Intra : Devis sur-mesure sur demande.</li>
-                    <li class="info-item"><strong>8. Contact & Inscription</strong> email@votre-agence.fr | 01 00 00 00 00</li>
-                </ul>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-gray-500 italic border-l-4 border-gray-300 pl-3">Conformément à nos engagements qualité, voici les détails du programme :</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-clipboard-check text-blue-500 mt-1 mr-3 w-5"></i><div><strong>1. Prérequis :</strong> Aucun prérequis nécessaire.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-bullseye text-blue-500 mt-1 mr-3 w-5"></i><div><strong>2. Objectifs :</strong> Secourir une victime d’AT et participer à la prévention des risques professionnels.</div></li>
+                        <li class="flex items-start"><i class="fa-regular fa-clock text-blue-500 mt-1 mr-3 w-5"></i><div><strong>3. Durée :</strong> 14 heures réparties sur 2 jours (présentiel).</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-chalkboard-user text-blue-500 mt-1 mr-3 w-5"></i><div><strong>4. Méthodes mobilisées :</strong> Apports théoriques, cas pratiques, simulations sur mannequins et DAE.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-list-check text-blue-500 mt-1 mr-3 w-5"></i><div><strong>5. Évaluation :</strong> Évaluation formative continue et épreuve certificative (grille INRS).</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-calendar-check text-blue-500 mt-1 mr-3 w-5"></i><div><strong>6. Accès & Délais :</strong> Inscription jusqu'à 48h avant session. Début sous 14 jours.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-tag text-blue-500 mt-1 mr-3 w-5"></i><div><strong>7. Tarifs :</strong> 250 € HT / personne (Inter) ou sur devis forfaitaire (Intra).</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-address-card text-blue-500 mt-1 mr-3 w-5"></i><div><strong>8. Contacts :</strong> contact@agence.fr | 01 00 00 00 00</div></li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Formation 2 : Incendie / Evacuation -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Manipulations Extincteurs & Évacuation</div>
-                    <div class="card-subtitle">Sécurité Incendie en Entreprise</div>
+            <!-- Card Incendie -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300">
+                <div class="bg-red-50 border-b border-red-100 p-6 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-red-900">Incendie & Évacuation</h2>
+                        <p class="text-sm font-semibold text-red-600 uppercase tracking-wider mt-1">Manipulation Extincteurs</p>
+                    </div>
+                    <i class="fa-solid fa-fire text-4xl text-red-200"></i>
                 </div>
-                <ul class="info-list">
-                    <li class="info-item"><strong>1. Prérequis</strong> Aucun prérequis nécessaire.</li>
-                    <li class="info-item"><strong>2. Objectifs</strong> Manipuler les extincteurs face à un départ de feu, connaître les procédures d'alarme et diriger l'évacuation des locaux.</li>
-                    <li class="info-item"><strong>3. Durée</strong> 3h30 (0,5 jour en présentiel).</li>
-                    <li class="info-item"><strong>4. Méthodes Mobilisées</strong> Extinction de vrais feux sur bac à feu écologique autonome, mise en situation dans l'entreprise client.</li>
-                    <li class="info-item"><strong>5. Modalités d'Évaluation</strong> Contrôle pratique continu de manipulation du matériel en fin de session.</li>
-                    <li class="info-item"><strong>6. Délais & Accessibilité</strong> Intervention sous 10 jours ouvrés après validation de la convention.</li>
-                    <li class="info-item"><strong>7. Tarifs</strong> Forfait Intra-entreprise : À partir de 450 € HT par groupe (max 12 pers).</li>
-                    <li class="info-item"><strong>8. Contact & Inscription</strong> email@votre-agence.fr | 01 00 00 00 00</li>
-                </ul>
+                <div class="p-6 space-y-4">
+                    <p class="text-sm text-gray-500 italic border-l-4 border-gray-300 pl-3">Conformément à nos engagements qualité, voici les détails du programme :</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fa-solid fa-clipboard-check text-red-500 mt-1 mr-3 w-5"></i><div><strong>1. Prérequis :</strong> Aucun prérequis nécessaire.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-bullseye text-red-500 mt-1 mr-3 w-5"></i><div><strong>2. Objectifs :</strong> Manipuler un extincteur face à un feu naissant et organiser l'évacuation.</div></li>
+                        <li class="flex items-start"><i class="fa-regular fa-clock text-red-500 mt-1 mr-3 w-5"></i><div><strong>3. Durée :</strong> 3h30 (une demi-journée en présentiel).</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-chalkboard-user text-red-500 mt-1 mr-3 w-5"></i><div><strong>4. Méthodes mobilisées :</strong> Théorie, parcours d'évacuation, extinction sur bac à feu écologique.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-list-check text-red-500 mt-1 mr-3 w-5"></i><div><strong>5. Évaluation :</strong> Contrôle pratique continu de manipulation en fin de session.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-calendar-check text-red-500 mt-1 mr-3 w-5"></i><div><strong>6. Accès & Délais :</strong> Inscription jusqu'à 48h avant. Intervention sous 10 jours ouvrés.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-tag text-red-500 mt-1 mr-3 w-5"></i><div><strong>7. Tarifs :</strong> Forfait Intra-entreprise : à partir de 450 € HT par groupe.</div></li>
+                        <li class="flex items-start"><i class="fa-solid fa-address-card text-red-500 mt-1 mr-3 w-5"></i><div><strong>8. Contacts :</strong> contact@agence.fr | 01 00 00 00 00</div></li>
+                    </ul>
+                </div>
             </div>
 
         </div>
 
-        <!-- Box Accessibilité Handicap (Exigence Qualiopi Ind. 1 & 26) -->
-        <div class="psh-box">
-            <h3>9. Accueil & Accessibilité aux Personnes en Situation de Handicap (PSH)</h3>
-            <p>Nos formations sont étudiées pour être accessibles à tous. Tout aménagement pédagogique, technique ou organisationnel peut être mis en œuvre après étude préalable de vos besoins spécifiques.</p>
-            <p style="margin-top: 10px;"><strong>Contact Référent Handicap :</strong> M./Mme [Nom du Référent] - <strong>Email :</strong> handicap@votre-agence.fr</p>
+        <!-- Section Handicap (Indicateur 26) -->
+        <div class="mt-12 bg-slate-800 rounded-xl p-8 text-white shadow-lg flex flex-col md:flex-row items-center gap-6">
+            <div class="bg-blue-500 p-4 rounded-full">
+                <i class="fa-brands fa-accessible-icon text-3xl"></i>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-2">9. Accessibilité Handicap (PSH)</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Nos formations sont accessibles à tous. Pour toute adaptation matérielle, organisationnelle ou pédagogique (tiers-temps, supports adaptés), merci de contacter notre Référent Handicap en amont de votre inscription.<br>
+                    <span class="font-semibold text-blue-300 mt-2 inline-block">Contact : handicap@agence.fr | 01 00 00 00 00</span>
+                </p>
+            </div>
         </div>
+    </section>
 
-    </div>
-
-    <footer>
-        <p><strong>[Nom de Votre Agence]</strong> — Organisme de Formation Professionnelle</p>
-        <p>SIRET : 000 000 000 00000 | Déclaration d'activité enregistrée sous le N° 00 00 00000 00 auprès du Préfet de région.</p>
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #64748b;">Conforme au Référentiel National Qualité (Qualiopi) | Informations publiques mises à jour en 2026.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 px-6 text-center text-sm border-t border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <p class="font-semibold text-white mb-2">[NOM DE VOTRE AGENCE] - Organisme de Formation</p>
+            <p>SIRET : 000 000 000 00000 | NDA : 00 00 00000 00 (auprès du Préfet de région)</p>
+            <p class="mt-4 text-xs">Conçu en conformité avec le Référentiel National Qualité. Informations publiques à jour.</p>
+        </div>
     </footer>
 
 </body>
