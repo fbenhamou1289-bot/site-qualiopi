@@ -3,84 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[VOTRE AGENCE] | Organisme de Formation B2B</title>
+    <title>[VOTRE AGENCE] | Formation & Prévention B2B</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fafafa; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
         
-        /* Hero Section - Luxe, sombre et profond */
-        .hero-bg {
-            background-color: #0f172a;
-            background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 40%),
-                              radial-gradient(circle at bottom left, rgba(15, 23, 42, 1), #0f172a);
+        /* Hero Section avec Image et Overlay élégant */
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%), 
+                              url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Cartes ultra-minimalistes */
-        .card-pro {
+        /* Cartes de formation visuelles */
+        .card-visual {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        .card-pro:hover {
-            border-color: #cbd5e1;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        .card-visual:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: translateY(-4px);
+            border-color: #cbd5e1;
         }
 
-        /* Animation de la flèche */
-        .group:hover .arrow-icon { transform: translateX(6px); }
+        /* Image de la carte avec zoom au survol */
+        .card-image-container { overflow: hidden; }
+        .card-image { transition: transform 0.5s ease; }
+        .card-visual:hover .card-image { transform: scale(1.05); }
 
-        /* Animation du Tiroir Latéral (Side-Drawer) pour Qualiopi */
+        /* Animation du Tiroir Latéral pour Qualiopi */
         .drawer-overlay { transition: opacity 0.3s ease; backdrop-filter: blur(4px); }
         .drawer-content { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        
         .drawer-hidden .drawer-overlay { opacity: 0; pointer-events: none; }
         .drawer-hidden .drawer-content { transform: translateX(100%); pointer-events: none; }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Navbar Premium Glassmorphism -->
-    <nav class="fixed w-full z-40 top-0 bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
                 <i class="ph-fill ph-shield-check text-blue-600 text-2xl"></i>
                 [VOTRE AGENCE]
             </div>
-            <a href="#contact" class="hidden md:block text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 px-5 py-2.5 rounded-md transition-colors">
-                Nous contacter
+            <a href="#contact" class="hidden md:flex text-sm font-semibold text-slate-700 hover:text-blue-600 transition items-center gap-2">
+                Nous contacter <i class="ph ph-arrow-right"></i>
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-bg min-h-[75vh] flex items-center pt-20 border-b-4 border-blue-600">
-        <div class="max-w-7xl mx-auto px-6 py-16 w-full">
-            <div class="max-w-4xl">
-                <!-- Badges de réassurance -->
+    <!-- Hero Section (Humain et Immersif) -->
+    <header class="hero-section min-h-[80vh] flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full py-12">
+            <div class="max-w-3xl">
+                <!-- Badges -->
                 <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-bold tracking-widest uppercase">
-                        <i class="ph-fill ph-check-circle text-sm"></i> Qualiopi
+                    <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold tracking-wide">
+                        <i class="ph-fill ph-check-circle"></i> CERTIFIÉ QUALIOPI
                     </span>
-                    <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[11px] font-bold tracking-widest uppercase">
-                        <i class="ph-fill ph-bank text-sm"></i> OPCO / FNE
+                    <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md bg-blue-500/20 border border-blue-500/30 text-blue-200 text-xs font-bold tracking-wide">
+                        <i class="ph-fill ph-bank"></i> ÉLIGIBLE OPCO / FNE
                     </span>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] mb-8 tracking-tight">
-                    L'excellence de vos équipes.<br>
-                    <span class="text-blue-500">Notre niveau d'exigence.</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                    Protégez vos collaborateurs.<br>
+                    <span class="text-blue-400">Développez leurs talents.</span>
                 </h1>
                 
-                <p class="text-lg md:text-xl text-slate-400 font-light max-w-2xl mb-10 leading-relaxed">
-                    Des parcours d'ingénierie pédagogique sur-mesure. De la maîtrise de vos obligations réglementaires jusqu'au développement de vos compétences stratégiques.
+                <p class="text-lg text-slate-300 font-light max-w-2xl mb-10 leading-relaxed">
+                    Organisme de formation B2B expert en prévention des risques et développement des compétences. Des formations terrain, concrètes et adaptées à vos enjeux.
                 </p>
                 
-                <a href="#catalogue" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 font-bold py-4 px-8 rounded-lg transition-colors duration-200">
-                    Découvrir les parcours <i class="ph ph-arrow-down text-lg"></i>
+                <a href="#catalogue" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg shadow-blue-600/30">
+                    Explorer nos formations
                 </a>
             </div>
         </div>
@@ -89,105 +93,125 @@
     <!-- Catalogue Section -->
     <section class="py-24 px-6 max-w-7xl mx-auto" id="catalogue">
         
-        <div class="mb-16">
-            <h2 class="text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-3">Notre Catalogue</h2>
-            <h3 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-8">Les compétences qui transforment l'entreprise.</h3>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+            <div class="max-w-2xl">
+                <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Notre Catalogue</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Des parcours pensés pour l'action.</h3>
+            </div>
             
-            <!-- Category Pills -->
+            <!-- Filtres -->
             <div class="flex flex-wrap gap-2">
-                <span class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm">
+                <span class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm cursor-pointer">
                     Sécurité & Réglementaire
                 </span>
-                <span class="bg-white text-slate-400 border border-slate-200 px-5 py-2.5 rounded-full text-sm font-medium">
-                    Management <span class="text-[10px] font-bold ml-1 text-slate-300 bg-slate-50 px-2 py-0.5 rounded">À VENIR</span>
+                <span class="bg-white text-slate-400 border border-slate-200 px-5 py-2.5 rounded-full text-sm font-medium cursor-not-allowed">
+                    Management <span class="text-[10px] font-bold ml-1 text-slate-400 bg-slate-50 px-2 py-0.5 rounded">À VENIR</span>
                 </span>
             </div>
         </div>
 
-        <!-- Course Grid -->
-        <div class="grid md:grid-cols-2 gap-8">
+        <!-- Course Grid (Avec Images) -->
+        <div class="grid md:grid-cols-2 gap-10">
             
             <!-- Card 1 : SST -->
-            <div class="card-pro p-10 flex flex-col h-full group cursor-pointer" onclick="openDrawer('drawer-sst')">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 rounded bg-slate-50 flex items-center justify-center text-slate-900 border border-slate-100">
-                        <i class="ph ph-heartbeat text-2xl"></i>
+            <div class="card-visual flex flex-col h-full group cursor-pointer" onclick="openDrawer('drawer-sst')">
+                <!-- Header Image -->
+                <div class="card-image-container h-56 w-full relative">
+                    <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&q=80&w=800" alt="Formation Secourisme" class="card-image w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="ph-fill ph-heartbeat text-blue-600 text-lg"></i> Secourisme
                     </div>
-                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Prévention & Secours</span>
                 </div>
                 
-                <h4 class="text-2xl font-bold text-slate-900 mb-4">Sauveteur Secouriste du Travail (SST)</h4>
-                <p class="text-slate-600 mb-10 flex-grow leading-relaxed font-light">Formez un maillon essentiel de votre chaîne de survie. Intervenez efficacement face à l'accident et devenez acteur de la prévention dans vos locaux.</p>
-                
-                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                    <div class="flex gap-4 text-sm font-medium text-slate-500">
-                        <span class="flex items-center gap-1.5"><i class="ph ph-clock text-slate-400 text-lg"></i> 14h</span>
-                        <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-slate-400 text-lg"></i> Présentiel</span>
+                <!-- Content -->
+                <div class="p-8 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-3">Sauveteur Secouriste du Travail (SST)</h4>
+                    <p class="text-slate-600 mb-8 flex-grow leading-relaxed font-light">Formez les maillons essentiels de votre chaîne de survie. Vos équipes apprennent à intervenir efficacement face à l'accident et deviennent acteurs de la prévention au quotidien.</p>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-slate-100">
+                        <div class="flex gap-4 text-sm font-medium text-slate-600">
+                            <span class="flex items-center gap-1.5"><i class="ph ph-clock text-blue-600 text-lg"></i> 14h</span>
+                            <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-blue-600 text-lg"></i> Présentiel</span>
+                        </div>
+                        <span class="bg-slate-100 group-hover:bg-blue-50 text-blue-700 font-semibold text-sm px-4 py-2 rounded-md transition-colors flex items-center gap-2">
+                            Voir le programme <i class="ph ph-arrow-right"></i>
+                        </span>
                     </div>
-                    <span class="text-blue-600 font-semibold text-sm flex items-center gap-2">
-                        Le programme <i class="ph ph-arrow-right text-lg arrow-icon transition-transform"></i>
-                    </span>
                 </div>
             </div>
 
             <!-- Card 2 : Incendie -->
-            <div class="card-pro p-10 flex flex-col h-full group cursor-pointer" onclick="openDrawer('drawer-incendie')">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 rounded bg-slate-50 flex items-center justify-center text-slate-900 border border-slate-100">
-                        <i class="ph ph-fire text-2xl"></i>
+            <div class="card-visual flex flex-col h-full group cursor-pointer" onclick="openDrawer('drawer-incendie')">
+                <!-- Header Image -->
+                <div class="card-image-container h-56 w-full relative">
+                    <img src="https://images.unsplash.com/photo-1601594954707-1b33bf67b848?auto=format&fit=crop&q=80&w=800" alt="Formation Incendie" class="card-image w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-slate-900 text-xs font-bold px-3 py-1.5 rounded-md shadow-sm uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="ph-fill ph-fire text-orange-500 text-lg"></i> Incendie
                     </div>
-                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Sécurité Incendie</span>
                 </div>
                 
-                <h4 class="text-2xl font-bold text-slate-900 mb-4">Manipulation d'Extincteurs</h4>
-                <p class="text-slate-600 mb-10 flex-grow leading-relaxed font-light">Apprenez à maîtriser le risque incendie à la source. Détection, première intervention et organisation sereine de l'évacuation de votre site.</p>
-                
-                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
-                    <div class="flex gap-4 text-sm font-medium text-slate-500">
-                        <span class="flex items-center gap-1.5"><i class="ph ph-clock text-slate-400 text-lg"></i> 3,5h</span>
-                        <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-slate-400 text-lg"></i> Sur site</span>
+                <!-- Content -->
+                <div class="p-8 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-3">Manipulation d'Extincteurs & Évacuation</h4>
+                    <p class="text-slate-600 mb-8 flex-grow leading-relaxed font-light">Maitrisez le risque incendie à la source. Vos collaborateurs apprennent la détection, l'utilisation des moyens de première intervention et l'organisation d'une évacuation sereine.</p>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-slate-100">
+                        <div class="flex gap-4 text-sm font-medium text-slate-600">
+                            <span class="flex items-center gap-1.5"><i class="ph ph-clock text-orange-500 text-lg"></i> 3,5h</span>
+                            <span class="flex items-center gap-1.5"><i class="ph ph-buildings text-orange-500 text-lg"></i> Sur site</span>
+                        </div>
+                        <span class="bg-slate-100 group-hover:bg-blue-50 text-blue-700 font-semibold text-sm px-4 py-2 rounded-md transition-colors flex items-center gap-2">
+                            Voir le programme <i class="ph ph-arrow-right"></i>
+                        </span>
                     </div>
-                    <span class="text-blue-600 font-semibold text-sm flex items-center gap-2">
-                        Le programme <i class="ph ph-arrow-right text-lg arrow-icon transition-transform"></i>
-                    </span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Handicap Section (Hyper sobre) -->
-    <section class="py-16 px-6 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 bg-slate-50 p-10 rounded-2xl border border-slate-100">
-            <div class="max-w-3xl">
-                <div class="flex items-center gap-2 mb-3">
-                    <i class="ph-fill ph-wheelchair text-blue-600 text-lg"></i>
-                    <h3 class="text-[11px] font-bold text-blue-600 uppercase tracking-widest">Accessibilité PSH</h3>
+    <!-- Handicap Section (Humaine et rassurante) -->
+    <section class="py-20 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-slate-900 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl">
+                <!-- Image -->
+                <div class="md:w-2/5 h-64 md:h-auto relative">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" alt="Référent Handicap" class="w-full h-full object-cover opacity-90">
                 </div>
-                <h4 class="text-2xl font-bold text-slate-900 mb-3">Une formation sans barrières.</h4>
-                <p class="text-slate-600 leading-relaxed font-light text-sm">
-                    Notre référent handicap étudie avec vous toutes les adaptations pédagogiques, matérielles ou organisationnelles nécessaires avant votre parcours.
-                </p>
-            </div>
-            <div class="flex flex-col sm:flex-row w-full lg:w-auto gap-3 flex-shrink-0">
-                <a href="mailto:contact@votre-agence.fr" class="bg-white border border-slate-200 text-slate-700 hover:text-blue-600 font-medium py-2.5 px-5 rounded-md transition flex items-center justify-center gap-2 text-sm shadow-sm">
-                    <i class="ph ph-envelope-simple text-lg"></i> Référent Handicap
-                </a>
+                <!-- Contenu -->
+                <div class="md:w-3/5 p-10 md:p-14 flex flex-col justify-center">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-wheelchair text-blue-400 text-xl"></i>
+                        <h3 class="text-xs font-bold text-blue-400 uppercase tracking-widest">Inclusion & PSH</h3>
+                    </div>
+                    <h4 class="text-3xl font-bold text-white mb-4">La formation, accessible à toutes et tous.</h4>
+                    <p class="text-slate-300 leading-relaxed font-light mb-8">
+                        Parce que les compétences n'ont pas de barrières. Notre référente handicap étudie avec vous, en toute confidentialité, les adaptations pédagogiques, matérielles ou organisationnelles nécessaires pour garantir la réussite de votre parcours.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:contact@votre-agence.fr" class="bg-white text-slate-900 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center gap-2 text-sm">
+                            <i class="ph-fill ph-envelope-simple text-lg"></i> Contacter notre Référent
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white pt-12 pb-8 px-6 text-slate-500 text-sm font-medium border-t border-slate-200">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div class="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+    <footer class="bg-slate-50 pt-16 pb-8 px-6 text-slate-500 text-sm border-t border-slate-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 mb-10 pb-8 border-b border-slate-200">
+            <div class="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
                 <i class="ph-fill ph-shield-check text-blue-600"></i> [VOTRE AGENCE]
             </div>
-            <div class="flex flex-wrap justify-center gap-6 text-xs">
+            <div class="flex flex-wrap justify-center gap-8 font-medium">
                 <span>SIRET : XX XXX XXX XXXXX</span>
                 <span>NDA : XX XX XXXXX XX</span>
-                <a href="#" class="hover:text-slate-900 transition">Mentions légales</a>
+                <a href="#" class="hover:text-blue-600 transition">Mentions légales</a>
             </div>
+        </div>
+        <div class="text-center text-xs text-slate-400">
+            &copy; 2026 [VOTRE AGENCE]. Conçu dans le respect du Référentiel National Qualité (Qualiopi).
         </div>
     </footer>
 
@@ -197,20 +221,18 @@
 
     <!-- Drawer SST -->
     <div id="drawer-sst" class="drawer-hidden fixed inset-0 z-50 overflow-hidden">
-        <div class="drawer-overlay absolute inset-0 bg-slate-900/40" onclick="closeDrawer('drawer-sst')"></div>
+        <div class="drawer-overlay absolute inset-0 bg-slate-900/60" onclick="closeDrawer('drawer-sst')"></div>
         
         <div class="drawer-content absolute top-0 right-0 w-full max-w-md h-full bg-white shadow-2xl overflow-y-auto flex flex-col border-l border-slate-200">
-            <!-- Header du tiroir -->
-            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-md z-10">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start sticky top-0 bg-white/95 backdrop-blur-md z-10">
                 <div>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">Indicateur 1 Qualiopi</span>
+                    <span class="text-[10px] font-bold text-blue-700 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">Indicateur 1 Qualiopi</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-3 leading-tight">Programme détaillé<br>Sauveteur Secouriste</h3>
                 </div>
-                <button onclick="closeDrawer('drawer-sst')" class="text-slate-400 hover:text-slate-900 transition bg-slate-50 hover:bg-slate-100 p-2 rounded-full">
+                <button onclick="closeDrawer('drawer-sst')" class="text-slate-400 hover:text-slate-900 transition bg-slate-100 hover:bg-slate-200 p-2 rounded-full">
                     <i class="ph ph-x text-xl"></i>
                 </button>
             </div>
-            <!-- Contenu légal 9 points -->
             <div class="p-8">
                 <ul class="space-y-6 text-sm text-slate-600 font-light">
                     <li><strong class="text-slate-900 font-semibold block mb-1">1. Prérequis</strong> Aucun prérequis nécessaire.</li>
@@ -221,7 +243,7 @@
                     <li><strong class="text-slate-900 font-semibold block mb-1">6. Accès & Délais</strong> Inscription jusqu'à 48h avant. Début sous 14 jours.</li>
                     <li><strong class="text-slate-900 font-semibold block mb-1">7. Tarifs</strong> Inter : 250 € HT / pers. Intra : Sur devis.</li>
                     <li><strong class="text-slate-900 font-semibold block mb-1">8. Contacts</strong> contact@[votre-agence].fr | 01 00 00 00 00</li>
-                    <li class="bg-slate-50 p-4 rounded-lg border border-slate-100"><strong class="text-slate-900 font-semibold block mb-1">9. Accessibilité PSH</strong> Accessible aux PSH. Contactez notre référent handicap pour toute adaptation.</li>
+                    <li class="bg-blue-50/50 p-5 rounded-xl border border-blue-100"><strong class="text-blue-900 font-semibold block mb-1">9. Accessibilité PSH</strong> Accessible aux PSH. Contactez notre référent handicap pour toute adaptation.</li>
                 </ul>
             </div>
         </div>
@@ -229,15 +251,15 @@
 
     <!-- Drawer Incendie -->
     <div id="drawer-incendie" class="drawer-hidden fixed inset-0 z-50 overflow-hidden">
-        <div class="drawer-overlay absolute inset-0 bg-slate-900/40" onclick="closeDrawer('drawer-incendie')"></div>
+        <div class="drawer-overlay absolute inset-0 bg-slate-900/60" onclick="closeDrawer('drawer-incendie')"></div>
         
         <div class="drawer-content absolute top-0 right-0 w-full max-w-md h-full bg-white shadow-2xl overflow-y-auto flex flex-col border-l border-slate-200">
-            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start sticky top-0 bg-white/90 backdrop-blur-md z-10">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start sticky top-0 bg-white/95 backdrop-blur-md z-10">
                 <div>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">Indicateur 1 Qualiopi</span>
+                    <span class="text-[10px] font-bold text-orange-600 uppercase tracking-widest bg-orange-50 px-2 py-1 rounded">Indicateur 1 Qualiopi</span>
                     <h3 class="text-xl font-bold text-slate-900 mt-3 leading-tight">Programme détaillé<br>Sécurité Incendie</h3>
                 </div>
-                <button onclick="closeDrawer('drawer-incendie')" class="text-slate-400 hover:text-slate-900 transition bg-slate-50 hover:bg-slate-100 p-2 rounded-full">
+                <button onclick="closeDrawer('drawer-incendie')" class="text-slate-400 hover:text-slate-900 transition bg-slate-100 hover:bg-slate-200 p-2 rounded-full">
                     <i class="ph ph-x text-xl"></i>
                 </button>
             </div>
@@ -251,7 +273,7 @@
                     <li><strong class="text-slate-900 font-semibold block mb-1">6. Accès & Délais</strong> Inscription jusqu'à 48h avant. Intervention sous 10 jours.</li>
                     <li><strong class="text-slate-900 font-semibold block mb-1">7. Tarifs</strong> Forfait Intra : À partir de 450 € HT / groupe.</li>
                     <li><strong class="text-slate-900 font-semibold block mb-1">8. Contacts</strong> contact@[votre-agence].fr | 01 00 00 00 00</li>
-                    <li class="bg-slate-50 p-4 rounded-lg border border-slate-100"><strong class="text-slate-900 font-semibold block mb-1">9. Accessibilité PSH</strong> Accessible aux PSH. Contactez notre référent handicap pour toute adaptation.</li>
+                    <li class="bg-orange-50/50 p-5 rounded-xl border border-orange-100"><strong class="text-orange-900 font-semibold block mb-1">9. Accessibilité PSH</strong> Accessible aux PSH. Contactez notre référent handicap pour toute adaptation.</li>
                 </ul>
             </div>
         </div>
