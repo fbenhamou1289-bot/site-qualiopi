@@ -129,8 +129,8 @@
         <!-- Course Grid -->
         <div class="grid md:grid-cols-2 gap-8">
             
-            <!-- Card 1 : SST -->
-            <div class="card-visual flex flex-col h-full group cursor-pointer" onclick="window.location.href='formation-sst.html'">
+            <!-- Card 1 : SST (Maintenant un vrai lien intouchable) -->
+            <a href="formation-sst.html" class="card-visual flex flex-col h-full group cursor-pointer block">
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex items-center gap-3 mb-6">
                         <i class="ph ph-heartbeat text-blue-600 text-3xl"></i>
@@ -144,12 +144,12 @@
                         <div class="flex gap-4 text-sm font-semibold text-slate-500">
                             <span class="flex items-center gap-1.5"><i class="ph ph-clock text-lg"></i> 14h</span>
                         </div>
-                        <a href="formation-sst.html" class="bg-slate-900 group-hover:bg-blue-600 text-white font-bold text-xs px-4 py-2 rounded transition-colors flex items-center gap-2">
+                        <span class="bg-slate-900 group-hover:bg-blue-600 text-white font-bold text-xs px-4 py-2 rounded transition-colors flex items-center gap-2">
                             Programme détaillé <i class="ph ph-caret-right"></i>
-                        </a>
+                        </span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Card 2 : Incendie -->
             <div class="card-visual flex flex-col h-full group cursor-pointer" onclick="openDrawer('drawer-incendie')">
@@ -196,33 +196,6 @@
     <!-- ========================================== -->
     <!-- TIROIRS LÉGAUX QUALIOPI -->
     <!-- ========================================== -->
-
-    <!-- Drawer SST (Conservé pour éviter toute régression) -->
-    <div id="drawer-sst" class="drawer-hidden fixed inset-0 z-50 overflow-hidden">
-        <div class="drawer-overlay absolute inset-0 bg-slate-900/80" onclick="closeDrawer('drawer-sst')"></div>
-        <div class="drawer-content absolute top-0 right-0 w-full max-w-md h-full bg-white shadow-2xl overflow-y-auto flex flex-col">
-            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-start sticky top-0 bg-white z-10">
-                <div>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">Indicateur 1 Qualiopi</span>
-                    <h3 class="text-xl font-bold text-slate-900 mt-3 leading-tight">Programme détaillé<br>Sauveteur Secouriste</h3>
-                </div>
-                <button onclick="closeDrawer('drawer-sst')" class="text-slate-400 hover:text-slate-900 transition bg-slate-100 p-2 rounded-full"><i class="ph ph-x text-xl"></i></button>
-            </div>
-            <div class="p-8">
-                <ul class="space-y-6 text-sm text-slate-600">
-                    <li><strong class="text-slate-900 block mb-1">1. Prérequis</strong> Aucun.</li>
-                    <li><strong class="text-slate-900 block mb-1">2. Objectifs</strong> Intervenir face à l'accident et prévenir les risques (INRS).</li>
-                    <li><strong class="text-slate-900 block mb-1">3. Durée</strong> 14 heures.</li>
-                    <li><strong class="text-slate-900 block mb-1">4. Méthodes</strong> Théorie, pratique, DAE.</li>
-                    <li><strong class="text-slate-900 block mb-1">5. Évaluation</strong> Épreuve certificative INRS.</li>
-                    <li><strong class="text-slate-900 block mb-1">6. Accès</strong> Inscription 48h avant.</li>
-                    <li><strong class="text-slate-900 block mb-1">7. Tarifs</strong> Sur devis.</li>
-                    <li><strong class="text-slate-900 block mb-1">8. Contacts</strong> contact@[votre-agence].fr</li>
-                    <li class="bg-blue-50 p-4 rounded border border-blue-100"><strong class="text-blue-900 block mb-1">9. Accessibilité PSH</strong> Contactez notre référent handicap pour toute adaptation.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <!-- Drawer Incendie -->
     <div id="drawer-incendie" class="drawer-hidden fixed inset-0 z-50 overflow-hidden">
