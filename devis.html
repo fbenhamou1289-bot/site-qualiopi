@@ -10,7 +10,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-['Plus_Jakarta_Sans'] antialiased">
 
-    <!-- Header / Navbar Simplifiée -->
+    <!-- Header -->
     <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="text-xl font-extrabold tracking-tight flex items-center gap-2 hover:text-blue-400 transition">
@@ -25,7 +25,7 @@
 
     <main class="max-w-7xl mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-5 gap-16">
         
-        <!-- Colonne de gauche : Réassurance & Qualité -->
+        <!-- Colonne de gauche : Réassurance Qualiopi -->
         <div class="lg:col-span-2 space-y-8">
             <div>
                 <span class="text-sm font-bold text-blue-600 uppercase tracking-widest">Analyse de vos besoins</span>
@@ -35,67 +35,67 @@
                 </p>
             </div>
 
-            <!-- Preuves Qualiopi visibles pour l'utilisateur -->
             <div class="space-y-6 mt-12">
                 <div class="flex items-start gap-4">
                     <div class="bg-blue-100 text-blue-600 p-3 rounded-lg"><i class="ph ph-target text-2xl"></i></div>
                     <div>
-                        <h3 class="font-bold text-slate-900">Ingénierie sur-mesure</h3>
-                        <p class="text-sm text-slate-600 mt-1">Nous analysons vos attentes pour adapter notre pédagogie à la réalité de votre terrain.</p>
+                        <h3 class="font-bold text-slate-900">Analyse IA & Humaine</h3>
+                        <p class="text-sm text-slate-600 mt-1">Vos besoins sont analysés instantanément pour une réponse pédagogique sur-mesure (Conforme Qualiopi Ind. 2).</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-4">
                     <div class="bg-emerald-100 text-emerald-600 p-3 rounded-lg"><i class="ph ph-handshake text-2xl"></i></div>
                     <div>
-                        <h3 class="font-bold text-slate-900">Réponse rapide</h3>
-                        <p class="text-sm text-slate-600 mt-1">Vous recevrez une proposition commerciale et un programme détaillé sous 48 heures ouvrées.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-purple-100 text-purple-600 p-3 rounded-lg"><i class="ph ph-wheelchair text-2xl"></i></div>
-                    <div>
-                        <h3 class="font-bold text-slate-900">Accessibilité</h3>
-                        <p class="text-sm text-slate-600 mt-1">Notre référent handicap est à votre disposition pour aménager la formation si nécessaire.</p>
+                        <h3 class="font-bold text-slate-900">Réponse sous 48h</h3>
+                        <p class="text-sm text-slate-600 mt-1">Obtenez une proposition commerciale précise, incluant les frais de déplacement dans vos locaux.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Colonne de droite : Le Formulaire (Indicateur 2 & 26) -->
+        <!-- Colonne de droite : Formulaire Dynamique -->
         <div class="lg:col-span-3 bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-200">
-            <!-- Balise form classique. Pas d'action pour le moment car c'est une démo front-end, mais parfaite pour l'audit -->
-            <form action="#" method="POST" class="space-y-8">
+            
+            <!-- Message de succès caché par défaut -->
+            <div id="success-msg" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 rounded-xl mb-6 text-center">
+                <i class="ph-fill ph-check-circle text-4xl text-emerald-500 mb-2"></i>
+                <h3 class="font-bold text-lg">Demande envoyée avec succès !</h3>
+                <p class="text-sm mt-2">Notre IA traite actuellement vos données pour préparer votre dossier technique. Vous recevrez une réponse sous 48h.</p>
+            </div>
+
+            <!-- Formulaire -->
+            <form id="devis-form" class="space-y-8">
                 
-                <!-- Section 1: Coordonnées -->
+                <!-- Section 1: Coordonnées & Lieu (Correction logistique) -->
                 <div>
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">1. Vos coordonnées</h2>
+                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">1. Vous et vos locaux</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Nom de l'entreprise *</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="Votre société">
+                            <input type="text" name="entreprise" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="Votre société">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Code Postal & Ville *</label>
+                            <input type="text" name="lieu" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="75001 Paris (Lieu de formation)">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Votre nom & prénom *</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="Jean Dupont">
+                            <input type="text" name="contact_nom" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="Jean Dupont">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Email *</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="jean@entreprise.fr">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Téléphone *</label>
-                            <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="06 00 00 00 00">
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="jean@entreprise.fr">
                         </div>
                     </div>
                 </div>
 
-                <!-- Section 2: Le Besoin -->
+                <!-- Section 2: Besoin (Dynamique) -->
                 <div>
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">2. Votre besoin en formation</h2>
+                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">2. Votre projet de formation</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Formation souhaitée *</label>
-                            <select required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50">
+                            <select id="formation-select" name="formation" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50">
                                 <option value="" disabled selected>Sélectionnez une formation...</option>
                                 <option value="sst-initial">SST Initial (14h)</option>
                                 <option value="sst-mac">MAC SST - Recyclage (7h)</option>
@@ -103,46 +103,142 @@
                                 <option value="autre">Autre demande sur-mesure</option>
                             </select>
                         </div>
+                        
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Nombre de participants *</label>
-                            <input type="number" min="1" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="Ex: 6">
+                            <input type="number" id="participants-input" name="participants" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="Ex: 6">
+                            <p id="participants-help" class="text-xs text-slate-500 mt-2 font-medium">Sélectionnez d'abord une formation.</p>
                         </div>
+                        
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Période souhaitée</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="Ex: Septembre prochain">
+                            <input type="text" name="periode" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="Ex: Septembre prochain">
                         </div>
                     </div>
                 </div>
 
-                <!-- Section 3: Contexte et Handicap -->
+                <!-- Section 3: Contexte & PSH -->
                 <div>
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">3. Contexte & Accessibilité</h2>
+                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">3. Contexte spécifique</h2>
                     <div class="space-y-6">
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Décrivez brièvement vos attentes ou votre contexte (Optionnel)</label>
-                            <textarea rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition bg-slate-50" placeholder="Quels sont vos objectifs spécifiques pour vos équipes ?"></textarea>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Quels sont vos objectifs spécifiques (risques liés à votre activité) ?</label>
+                            <textarea name="contexte" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 outline-none transition bg-slate-50" placeholder="Ex: Nous travaillons dans le BTP, risque de chutes..."></textarea>
                         </div>
                         
-                        <!-- La fameuse question Handicap pour l'Indicateur 26 -->
-                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 flex items-start gap-3">
-                            <input type="checkbox" id="psh" class="mt-1 w-5 h-5 text-blue-600 border-slate-300 rounded focus:ring-blue-600">
+                        <div class="bg-blue-50/50 p-4 rounded-lg border border-blue-100 flex items-start gap-3">
+                            <input type="checkbox" name="handicap" id="psh" class="mt-1 w-5 h-5 text-blue-600 border-slate-300 rounded focus:ring-blue-600">
                             <label for="psh" class="text-sm text-slate-700 cursor-pointer">
-                                <strong>Personnes en situation de handicap (PSH) :</strong> En cochant cette case, j'indique que la formation accueillera un ou plusieurs participants nécessitant une adaptation du parcours ou des supports (Notre Référent Handicap vous contactera).
+                                <strong>Personnes en situation de handicap (PSH) :</strong> Des aménagements pédagogiques ou matériels sont-ils à prévoir pour un ou plusieurs participants ?
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-lg py-4 rounded-xl transition shadow-lg shadow-blue-600/30">
-                    Envoyer ma demande de devis
+                <!-- Consentement RGPD (Faille Légale) -->
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="rgpd" required class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded">
+                    <label for="rgpd" class="text-xs text-slate-600 cursor-pointer">
+                        * J'accepte que mes données soient traitées par [VOTRE AGENCE] pour formuler un devis et gérer la relation commerciale, conformément à la politique de confidentialité (RGPD).
+                    </label>
+                </div>
+
+                <!-- Message d'erreur dynamique (Blocage Formulaire) -->
+                <div id="error-msg" class="hidden bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg text-sm font-bold flex items-center gap-2">
+                    <i class="ph-fill ph-warning-circle text-xl"></i>
+                    <span id="error-text">Erreur de saisie.</span>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-slate-900 hover:bg-blue-600 text-white font-extrabold text-lg py-4 rounded-xl transition shadow-lg">
+                    Envoyer pour analyse & devis
                 </button>
-                <p class="text-center text-xs text-slate-500 mt-4">
-                    Vos données sont traitées dans le cadre exclusif de votre demande de formation, conformément à notre politique de confidentialité (RGPD).
-                </p>
             </form>
         </div>
 
     </main>
 
+    <!-- SCRIPT JAVASCRIPT : Intelligence du Formulaire & Préparation IA -->
+    <script>
+        const formationSelect = document.getElementById('formation-select');
+        const participantsInput = document.getElementById('participants-input');
+        const participantsHelp = document.getElementById('participants-help');
+        const form = document.getElementById('devis-form');
+        const errorMsg = document.getElementById('error-msg');
+        const errorText = document.getElementById('error-text');
+        const successMsg = document.getElementById('success-msg');
+        
+        // URL du Webhook pour l'IA (Make.com ou Zapier). 
+        // À remplacer par votre vrai lien une fois votre compte Make créé.
+        const IA_WEBHOOK_URL = "https://hook.eu1.make.com/VOTRE_WEBHOOK_ICI";
+
+        // 1. GESTION DYNAMIQUE DES REGLES INRS
+        formationSelect.addEventListener('change', function() {
+            const val = this.value;
+            
+            if (val.includes('sst')) {
+                // Règles strictes SST
+                participantsInput.min = 4;
+                participantsInput.max = 10;
+                participantsHelp.innerHTML = "<span class='text-blue-600 font-bold'>Règle INRS :</span> 4 stagiaires minimum, 10 maximum.";
+            } else if (val === 'incendie') {
+                // Règles Incendie
+                participantsInput.min = 1;
+                participantsInput.max = 15;
+                participantsHelp.innerHTML = "<span class='text-emerald-600 font-bold'>Réglementaire :</span> Jusqu'à 15 stagiaires maximum.";
+            } else {
+                // Règles Libres
+                participantsInput.min = 1;
+                participantsInput.max = 99;
+                participantsHelp.textContent = "Saisissez le nombre de participants prévus.";
+            }
+            
+            // Effacer l'erreur si l'utilisateur change de formation
+            errorMsg.classList.add('hidden');
+        });
+
+        // 2. BLOCAGE AVANT ENVOI & TRANSMISSION IA
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // On empêche le rechargement de la page
+            
+            const formation = formationSelect.value;
+            const participants = parseInt(participantsInput.value);
+            
+            // VÉRIFICATION BLOQUANTE
+            if (formation.includes('sst') && (participants < 4 || participants > 10)) {
+                errorText.textContent = "Validation impossible : Le référentiel national INRS impose un groupe compris strictement entre 4 et 10 participants pour le SST.";
+                errorMsg.classList.remove('hidden');
+                // On fait vibrer le bouton d'erreur (UX)
+                errorMsg.animate([{ transform: 'translateX(0px)' }, { transform: 'translateX(10px)' }, { transform: 'translateX(-10px)' }, { transform: 'translateX(0px)' }], { duration: 300 });
+                return; // On stoppe tout
+            }
+
+            // Si tout est bon, on cache les erreurs
+            errorMsg.classList.add('hidden');
+            
+            // ON RÉCUPÈRE LES DONNÉES POUR L'IA
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Simulation de l'envoi vers le Webhook IA
+            console.log("Transmission des données à l'IA d'automatisation...", data);
+            
+            /* DÉCOMMENTER CE CODE QUAND LE WEBHOOK EST PRÊT :
+            try {
+                await fetch(IA_WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+            } catch (err) {
+                console.error("Erreur Webhook", err);
+            }
+            */
+
+            // Animation de succès
+            form.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
