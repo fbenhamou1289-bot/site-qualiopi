@@ -66,7 +66,7 @@
             <!-- Formulaire -->
             <form id="devis-form" class="space-y-8">
                 
-                <!-- Section 1: Coordonnées & Lieu (Correction logistique) -->
+                <!-- Section 1: Coordonnées & Lieu -->
                 <div>
                     <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6">1. Vous et vos locaux</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
 
-                <!-- Consentement RGPD (Faille Légale) -->
+                <!-- Consentement RGPD -->
                 <div class="flex items-start gap-3">
                     <input type="checkbox" id="rgpd" required class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded">
                     <label for="rgpd" class="text-xs text-slate-600 cursor-pointer">
@@ -167,9 +167,8 @@
         const errorText = document.getElementById('error-text');
         const successMsg = document.getElementById('success-msg');
         
-        // URL du Webhook pour l'IA (Make.com ou Zapier). 
-        // À remplacer par votre vrai lien une fois votre compte Make créé.
-        const IA_WEBHOOK_URL = "https://hook.eu1.make.com/VOTRE_WEBHOOK_ICI";
+        // URL du Webhook n8n
+        const IA_WEBHOOK_URL = "https://fatben.app.n8n.cloud/webhook-test/reception-devis";
 
         // 1. GESTION DYNAMIQUE DES REGLES INRS
         formationSelect.addEventListener('change', function() {
@@ -196,7 +195,7 @@
             errorMsg.classList.add('hidden');
         });
 
-        // 2. BLOCAGE AVANT ENVOI & TRANSMISSION IA
+        // 2. ENVOI DES DONNÉES VERS N8N
         form.addEventListener('submit', async function(e) {
             e.preventDefault(); // On empêche le rechargement de la page
             
@@ -218,11 +217,10 @@
             // ON RÉCUPÈRE LES DONNÉES POUR L'IA
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
+            data.handicap = document.getElementById('psh').checked ? "Oui" : "Non";
+            data.rgpd = document.getElementById('rgpd').checked ? "Oui" : "Non";
             
-            // Simulation de l'envoi vers le Webhook IA
-            console.log("Transmission des données à l'IA d'automatisation...", data);
-            
-            /* DÉCOMMENTER CE CODE QUAND LE WEBHOOK EST PRÊT :
+            // Envoi réel vers n8n
             try {
                 await fetch(IA_WEBHOOK_URL, {
                     method: "POST",
@@ -232,7 +230,6 @@
             } catch (err) {
                 console.error("Erreur Webhook", err);
             }
-            */
 
             // Animation de succès
             form.classList.add('hidden');
