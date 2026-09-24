@@ -10,7 +10,6 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
         
-        /* Hero Immersif avec overlay blanc pour lisibilité parfaite */
         .hero-section {
             background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), 
                               url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000');
@@ -18,7 +17,6 @@
             background-position: center;
         }
 
-        /* Cartes de formation */
         .card-visual {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -30,16 +28,14 @@
         .card-visual:hover {
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             transform: translateY(-4px);
-            border-color: #2563eb; /* blue-600 */
+            border-color: #2563eb;
         }
 
-        /* Motifs hachurés en bleu */
         .hash-divider {
             background: repeating-linear-gradient(45deg, transparent, transparent 2px, #2563eb 2px, #2563eb 4px);
             height: 4px; width: 100px;
         }
 
-        /* Tiroirs Qualiopi */
         .drawer-overlay { transition: opacity 0.3s ease; backdrop-filter: blur(4px); }
         .drawer-content { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .drawer-hidden .drawer-overlay { opacity: 0; pointer-events: none; }
@@ -55,7 +51,7 @@
                 <i class="ph-fill ph-shield-check text-blue-500 text-2xl"></i>
                 [VOTRE AGENCE]
             </div>
-            <!-- BOUTON CONTACT RÉPARÉ -->
+            <!-- Bouton Contact Réparé -->
             <a href="contact.html" class="hidden md:flex text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 transition px-6 py-2.5 rounded-full items-center gap-2">
                 Contactez-nous
             </a>
@@ -75,6 +71,7 @@
                 </p>
                 
                 <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <!-- Bouton Catalogue Réparé -->
                     <a href="#catalogue" class="inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-8 rounded-md transition-colors">
                         Découvrir nos formations
                     </a>
@@ -116,7 +113,6 @@
             </h2>
             <div class="hash-divider mb-8"></div>
             
-            <!-- Filtres -->
             <div class="flex flex-wrap gap-2 justify-center">
                 <span class="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-semibold">
                     Sécurité & Réglementaire
@@ -127,10 +123,9 @@
             </div>
         </div>
 
-        <!-- Course Grid -->
         <div class="grid md:grid-cols-2 gap-8">
             
-            <!-- Card 1 : SST (Maintenant un vrai lien intouchable) -->
+            <!-- Card 1 : SST -->
             <a href="formation-sst.html" class="card-visual flex flex-col h-full group cursor-pointer block">
                 <div class="p-8 flex flex-col flex-grow">
                     <div class="flex items-center gap-3 mb-6">
@@ -193,10 +188,6 @@
             <span class="text-slate-500 font-normal">&copy; 2026 [VOTRE AGENCE]. Conforme Qualiopi.</span>
         </div>
     </footer>
-
-    <!-- ========================================== -->
-    <!-- TIROIRS LÉGAUX QUALIOPI -->
-    <!-- ========================================== -->
 
     <!-- Drawer Incendie -->
     <div id="drawer-incendie" class="drawer-hidden fixed inset-0 z-50 overflow-hidden">
