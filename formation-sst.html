@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formation Sauveteur Secouriste du Travail (SST) Initial. 14h de formation intra-entreprise pour prévenir les risques et secourir. Obtenez votre certificat INRS.">
     <title>Formation SST Initial (14h) | [VOTRE AGENCE]</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-['Plus_Jakarta_Sans'] antialiased">
+<body class="bg-slate-50 text-slate-900 font-['Plus_Jakarta_Sans'] antialiased print:bg-white">
 
-    <!-- Header / Navbar -->
-    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40">
+    <!-- Header / Navbar (Masqué à l'impression) -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40 print:hidden">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="text-xl font-extrabold tracking-tight flex items-center gap-2">
-                <i class="ph-fill ph-shield-check text-blue-500 text-2xl"></i>
+                <i class="ph-fill ph-shield-check text-blue-500 text-2xl" aria-hidden="true"></i>
                 [VOTRE AGENCE]
             </a>
             <!-- BOUTON CONTACT RÉPARÉ -->
@@ -24,51 +25,52 @@
         </div>
     </header>
 
-    <!-- Hero Formation SST -->
-    <section class="bg-slate-900 text-white py-16 px-6 border-b-4 border-blue-600">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-center">
+    <!-- Hero Formation SST (Adapté pour l'impression en fond blanc) -->
+    <section class="bg-slate-900 text-white py-16 px-6 border-b-4 border-blue-600 print:bg-transparent print:text-slate-900 print:border-b-2 print:border-slate-300 print:py-8">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-center print:block">
             <div class="lg:col-span-2">
                 
-                <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+                <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 print:text-3xl">
                     Sauveteur Secouriste du Travail (SST) - Initial
                 </h1>
-                <p class="text-slate-300 text-lg mb-8 font-light leading-relaxed">
+                <p class="text-slate-300 text-lg mb-8 font-light leading-relaxed print:text-slate-700">
                     Formez vos collaborateurs à secourir en cas d'accident et à devenir acteurs de la prévention des risques au sein de vos locaux.
                 </p>
                 
                 <!-- Résumé Clé -->
-                <div class="grid sm:grid-cols-3 gap-4 bg-slate-800/60 p-5 rounded-xl border border-slate-700">
+                <div class="grid sm:grid-cols-3 gap-4 bg-slate-800/60 p-5 rounded-xl border border-slate-700 print:bg-slate-50 print:border-slate-200">
                     <div>
-                        <span class="text-xs text-slate-400 block font-semibold uppercase">Durée</span>
-                        <span class="text-lg font-bold text-white">14 Heures (2j)</span>
+                        <span class="text-xs text-slate-400 block font-semibold uppercase print:text-slate-500">Durée</span>
+                        <span class="text-lg font-bold text-white print:text-slate-900">14 Heures (2j)</span>
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block font-semibold uppercase">Public / Prérequis</span>
-                        <span class="text-lg font-bold text-white">Tous salariés / Aucun</span>
+                        <span class="text-xs text-slate-400 block font-semibold uppercase print:text-slate-500">Public / Prérequis</span>
+                        <span class="text-lg font-bold text-white print:text-slate-900">Tous salariés / Aucun</span>
                     </div>
                     <div>
-                        <span class="text-xs text-slate-400 block font-semibold uppercase">Certification</span>
-                        <span class="text-lg font-bold text-blue-400">Certificat SST INRS</span>
+                        <span class="text-xs text-slate-400 block font-semibold uppercase print:text-slate-500">Certification</span>
+                        <span class="text-lg font-bold text-blue-400 print:text-blue-700">Certificat SST INRS</span>
                     </div>
                 </div>
             </div>
 
             <!-- Bloc Tarif & Inscription -->
-            <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-xl border border-slate-200">
+            <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-xl border border-slate-200 print:shadow-none print:mt-8">
                 <h3 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Tarification & Accès</h3>
                 <div class="mb-6">
-                    <span class="text-3xl font-extrabold">1 100 € HT / session</span>
-                    <span class="text-xs text-slate-500 block mt-1">Forfait Intra-entreprise (de 4 à 10 participants max.)</span>
+                    <span class="text-sm font-semibold text-slate-500 block mb-1">À partir de</span>
+                    <span class="text-3xl font-extrabold">1 100 € HT <span class="text-lg font-bold text-slate-600">/ session</span></span>
+                    <span class="text-xs text-slate-500 block mt-2">Forfait Intra-entreprise (de 4 à 10 participants max.)</span>
                 </div>
                 
                 <div class="space-y-2 mb-6 text-xs text-slate-600">
-                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5"></i> Formation dans vos locaux</div>
-                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5"></i> Traitement de la demande sous 48h</div>
-                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5"></i> Entrée en formation sous 14j (moyenne)</div>
+                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5" aria-hidden="true"></i> Formation dans vos locaux</div>
+                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5" aria-hidden="true"></i> Traitement de la demande sous 48h</div>
+                    <div class="flex items-start gap-2"><i class="ph ph-check-circle text-emerald-600 text-sm mt-0.5" aria-hidden="true"></i> Entrée en formation sous 14j (moyenne)</div>
                 </div>
 
-                <!-- BOUTON DEVIS FONCTIONNEL -->
-                <a href="devis.html" class="w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-3.5 px-6 rounded-lg text-center block transition">
+                <!-- BOUTON DEVIS FONCTIONNEL (Masqué à l'impression) -->
+                <a href="devis.html" class="w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-3.5 px-6 rounded-lg text-center block transition print:hidden">
                     Obtenir un devis sur-mesure
                 </a>
             </div>
@@ -76,55 +78,55 @@
     </section>
 
     <!-- Programme Détaillé Conforme Qualiopi (9 points) -->
-    <main class="max-w-7xl mx-auto px-6 py-16">
+    <main class="max-w-7xl mx-auto px-6 py-16 print:py-8">
         
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-slate-200 pb-6 gap-4">
             <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Programme & Informations Réglementaires</h2>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight print:text-2xl">Programme & Informations Réglementaires</h2>
                 <p class="text-slate-500 text-sm mt-1">Fiche d'information exhaustive - Mise à jour : Septembre 2026 (V1.2)</p>
             </div>
-            <!-- BOUTON PDF RÉPARÉ (Génération automatique) -->
-            <a href="javascript:window.print()" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 border border-blue-200 bg-blue-50 px-4 py-2.5 rounded-lg hover:bg-blue-100 transition">
-                <i class="ph ph-download-simple text-lg"></i> Télécharger la fiche PDF
+            <!-- BOUTON PDF RÉPARÉ (Masqué à l'impression) -->
+            <a href="javascript:window.print()" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 border border-blue-200 bg-blue-50 px-4 py-2.5 rounded-lg hover:bg-blue-100 transition print:hidden">
+                <i class="ph ph-download-simple text-lg" aria-hidden="true"></i> Télécharger la fiche PDF
             </a>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-10">
+        <div class="grid lg:grid-cols-3 gap-10 print:block">
             
             <!-- Colonne Principale (Objectifs & Deroulement) -->
             <div class="lg:col-span-2 space-y-10">
                 
                 <!-- 1. Objectifs Pédagogiques -->
-                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm print:shadow-none print:p-0 print:border-none print:mb-8">
                     <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-target text-blue-600"></i> 1. Objectifs de la Formation
+                        <i class="ph ph-target text-blue-600" aria-hidden="true"></i> 1. Objectifs de la Formation
                     </h3>
                     <ul class="space-y-3 text-slate-700 text-sm leading-relaxed">
                         <li class="flex items-start gap-3">
-                            <i class="ph ph-check text-blue-600 font-bold mt-1"></i>
+                            <i class="ph ph-check text-blue-600 font-bold mt-1" aria-hidden="true"></i>
                             <span><strong>Domaine d'action 1 :</strong> Intervenir immédiatement et efficacement face à une situation d'accident du travail en exécutant les gestes de premiers secours (Protéger, Examiner, Faire alerter, Secourir).</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="ph ph-check text-blue-600 font-bold mt-1"></i>
+                            <i class="ph ph-check text-blue-600 font-bold mt-1" aria-hidden="true"></i>
                             <span><strong>Domaine d'action 2 :</strong> Contribuer activement à la prévention des risques professionnels dans son entreprise (repérer les situations dangereuses et proposer des actions d'amélioration).</span>
                         </li>
                     </ul>
                 </section>
 
                 <!-- 2. Méthodes & Moyens Pédagogiques -->
-                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm print:shadow-none print:p-0 print:border-none print:mb-8">
                     <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-chalkboard-teacher text-blue-600"></i> 2. Méthodes Mobilisées & Moyens
+                        <i class="ph ph-chalkboard-teacher text-blue-600" aria-hidden="true"></i> 2. Méthodes Mobilisées & Moyens
                     </h3>
                     <p class="text-slate-600 text-sm mb-4 leading-relaxed">
                         Formation pratique axée à 70% sur la mise en situation réelle.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 text-sm text-slate-700">
-                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 print:border-slate-300">
                             <strong>Matériel pédagogique :</strong>
                             <p class="text-xs text-slate-500 mt-1">Mannequins d'entraînement (Adulte, Enfant, Nourrisson), Défibrillateur d'exercice (DAE), matériel de maquillage médical (simulations de saignements, brûlures).</p>
                         </div>
-                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 print:border-slate-300">
                             <strong>Supports de cours :</strong>
                             <p class="text-xs text-slate-500 mt-1">Remise à chaque apprenant du Guide des Données Techniques SST officiel publié par l'INRS.</p>
                         </div>
@@ -132,9 +134,9 @@
                 </section>
 
                 <!-- 3. Modalités d'Évaluation -->
-                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                <section class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm print:shadow-none print:p-0 print:border-none print:mb-8">
                     <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="ph ph-exam text-blue-600"></i> 3. Modalités d'Évaluation & Certification
+                        <i class="ph ph-exam text-blue-600" aria-hidden="true"></i> 3. Modalités d'Évaluation & Certification
                     </h3>
                     <div class="space-y-4 text-sm text-slate-700">
                         <p><strong>Évaluation formative :</strong> Réalisée en continu au travers d'exercices pratiques guidés.</p>
@@ -148,11 +150,11 @@
             </div>
 
             <!-- Colonne Latérale (Conditions, Contact, Handicap) -->
-            <div class="space-y-8">
+            <div class="space-y-8 print:mt-8">
                 
                 <!-- Informations Pratiques -->
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-sm">
-                    <h4 class="font-bold text-slate-900 text-base border-b border-slate-100 pb-2">Cadre de la formation</h4>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-sm print:shadow-none print:p-0 print:border-none">
+                    <h4 class="font-bold text-slate-900 text-base border-b border-slate-100 pb-2 print:border-slate-300">Cadre de la formation</h4>
                     
                     <div>
                         <strong class="text-slate-900 block mb-1">Prérequis :</strong>
@@ -176,9 +178,9 @@
                 </div>
 
                 <!-- Bloc PSH (Indicateur 26) -->
-                <div class="bg-blue-50/60 p-6 rounded-xl border border-blue-200 text-sm">
+                <div class="bg-blue-50/60 p-6 rounded-xl border border-blue-200 text-sm print:bg-white print:border-slate-300 print:p-4">
                     <div class="flex items-center gap-2 text-blue-900 font-bold mb-2">
-                        <i class="ph-fill ph-wheelchair text-xl"></i> Accessibilité Handicap (PSH)
+                        <i class="ph-fill ph-wheelchair text-xl" aria-hidden="true"></i> Accessibilité Handicap (PSH)
                     </div>
                     <p class="text-slate-600 text-xs leading-relaxed mb-4">
                         Toutes nos formations sont étudiées pour être accessibles aux personnes en situation de handicap. Contactez notre Référent Handicap pour adapter le parcours ou le matériel dans vos locaux :
@@ -189,10 +191,10 @@
                 </div>
 
                 <!-- Taux de réussite (Exigence Qualiopi) -->
-                <div class="bg-slate-900 text-white p-6 rounded-xl text-center space-y-2 border border-slate-700">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Indicateurs de Performance</span>
-                    <div class="text-sm font-semibold text-blue-400 mt-2 mb-2 bg-blue-900/30 py-2 rounded">Indicateurs en cours d'acquisition</div>
-                    <p class="text-xs text-slate-300 leading-relaxed">Organisme en création. Nos taux de réussite et de satisfaction seront publiés ici à l'issue de nos premières sessions de formation.</p>
+                <div class="bg-slate-900 text-white p-6 rounded-xl text-center space-y-2 border border-slate-700 print:bg-white print:text-slate-900 print:border-slate-300 print:p-4 print:text-left">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest print:text-slate-600">Indicateurs de Performance</span>
+                    <div class="text-sm font-semibold text-blue-400 mt-2 mb-2 bg-blue-900/30 py-2 rounded print:text-blue-800 print:bg-transparent print:p-0">Indicateurs en cours d'acquisition</div>
+                    <p class="text-xs text-slate-300 leading-relaxed print:text-slate-600">Organisme en création. Nos taux de réussite et de satisfaction seront publiés ici à l'issue de nos premières sessions de formation.</p>
                 </div>
 
             </div>
@@ -202,7 +204,7 @@
     </main>
 
     <!-- Footer Légitimité -->
-    <footer class="bg-slate-900 text-slate-500 py-8 text-center text-xs border-t border-slate-800">
+    <footer class="bg-slate-900 text-slate-500 py-8 text-center text-xs border-t border-slate-800 print:bg-transparent print:text-slate-700 print:border-t print:border-slate-300">
         <p>&copy; 2026 [VOTRE AGENCE] - Organisme de formation certifié Qualiopi. Fiche SST v1.2</p>
     </footer>
 
